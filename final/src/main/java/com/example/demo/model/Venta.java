@@ -12,8 +12,8 @@ import java.util.List;
 public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long codigo_venta;
-    private LocalDate fecha_venta;
+    private Long codigoVenta;
+    private LocalDate fechaVenta;
     private Double total;
     @OneToMany
     private List<Producto> listaProductos;

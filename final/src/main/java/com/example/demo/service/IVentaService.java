@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public interface IVentaService {
     void realizarVenta(Venta venta);
-    void eliminarVenta(Venta venta);
+    void eliminarVenta(Long idVenta);
     void actualizarVenta(Venta venta);
     List<Venta> listarVentas();
     Venta buscarVentaPorId(Long id);
