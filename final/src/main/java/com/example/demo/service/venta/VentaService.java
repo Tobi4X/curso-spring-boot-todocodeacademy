@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.venta;
 
 import com.example.demo.dto.MayorVentaDTO;
 import com.example.demo.dto.ResumenVentasDTO;
@@ -83,6 +83,20 @@ public class VentaService implements IVentaService{
 
     @Override
     public MayorVentaDTO obtenerMayorVenta() {
-        return null;
+        List<Venta> ventas = this.listarVentas();
+        Venta mayorVenta = ventas.getFirst();
+
+        for(Venta v : ventas)
+            if (v.getTotal() > mayorVenta.getTotal())
+                mayorVenta = v;
+
+        MayorVentaDTO mayorVentaDTO = new MayorVentaDTO();
+        mayorVentaDTO.setCodigoVenta(mayorVenta.getCodigoVenta());
+        mayorVentaDTO.setMontoTotal(mayorVenta.getTotal());
+        mayorVentaDTO.setCantProductos(mayorVenta.getListaProductos().size());
+        mayorVentaDTO.setNombreCliente(mayorVenta.getUnCLiente().getNombre());
+        mayorVentaDTO.setApellidoCLiente(mayorVenta.getUnCLiente().getApellido());
+
+        return mayorVentaDTO;
     }
 }

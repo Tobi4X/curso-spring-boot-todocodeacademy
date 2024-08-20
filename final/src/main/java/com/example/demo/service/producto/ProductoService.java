@@ -1,8 +1,9 @@
-package com.example.demo.service;
+package com.example.demo.service.producto;
 
 import com.example.demo.model.Producto;
 import com.example.demo.model.filtro.producto.FilterProducto;
 import com.example.demo.repository.IProductoRepository;
+import com.example.demo.service.venta.VentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
