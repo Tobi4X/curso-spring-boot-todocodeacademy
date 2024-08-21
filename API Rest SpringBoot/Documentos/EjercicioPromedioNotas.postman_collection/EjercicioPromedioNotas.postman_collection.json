@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "dc957d2c-2026-4a9f-887d-e14ae35e1473",
+		"name": "EjercicioPromedioNotas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener Promedio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/promedio?nota1=8&nota2=10&nota3=9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promedio"
+					],
+					"query": [
+						{
+							"key": "nota1",
+							"value": "8"
+						},
+						{
+							"key": "nota2",
+							"value": "10"
+						},
+						{
+							"key": "nota3",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
