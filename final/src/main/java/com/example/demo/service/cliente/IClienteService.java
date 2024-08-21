@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface IClienteService {
     void crearCliente(Cliente cliente);
-    void eliminarCliente(Cliente cliente);
+    void eliminarCliente(Long idCliente);
     void actualizarCliente(Cliente cliente);
     List<Cliente> listarCliente();
     Cliente buscarClientePorId(Long id);
