@@ -7,36 +7,36 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/clientes")
+@RestController
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @PostMapping("/crear")
+    @PostMapping("/clientes/crear")
     public String crearCliente(@RequestBody Cliente cliente) {
         clienteService.crearCliente(cliente);
         return "Cliente creado correctamente";
     }
 
-    @DeleteMapping("/eliminar/{idCLiente}")
-    public String eliminarCliente(@RequestAttribute Long idCliente) {
+    @DeleteMapping("/clientes/eliminar/{idCLiente}")
+    public String eliminarCliente(@PathVariable Long idCliente) {
         clienteService.eliminarCliente(idCliente);
         return "Cliente eliminado correctamente";
     }
 
-    @PutMapping("/editar")
+    @PutMapping("/clientes/editar")
     public String editarCliente(@RequestBody Cliente cliente) {
         clienteService.actualizarCliente(cliente);
         return "Cliente editado correctamente";
     }
 
-    @GetMapping()
+    @GetMapping("/clientes")
     public List<Cliente> listarClientes() {
         return clienteService.listarCliente();
     }
 
-    @GetMapping("/{idCliente}")
-    public Cliente buscarClientePorId(@RequestAttribute Long idCliente) {
+    @GetMapping("/clientes/{idCliente}")
+    public Cliente buscarClientePorId(@PathVariable Long idCliente) {
         return clienteService.buscarClientePorId(idCliente);
     }
 

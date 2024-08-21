@@ -84,7 +84,8 @@ public class VentaService implements IVentaService{
     @Override
     public MayorVentaDTO obtenerMayorVenta() {
         List<Venta> ventas = this.listarVentas();
-        Venta mayorVenta = ventas.getFirst();
+        Venta mayorVenta = new Venta();
+        mayorVenta.setTotal(0.00);
 
         for(Venta v : ventas)
             if (v.getTotal() > mayorVenta.getTotal())
